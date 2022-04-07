@@ -1,0 +1,17 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        l=matrix.copy()
+        leght=len(matrix)
+        matrix.clear()
+        for i in range (0,leght):
+            result=[]
+            for j in range(leght-1,-1,-1):
+                #print(l2[j][i])
+                result.append(l[j][i])
+            matrix.append(result)
+            
+        #print(matrix)
+        
+        
+        
+        

@@ -1,0 +1,15 @@
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        q=[[0]]
+        length=len(graph)-1
+        result=[]
+        while q:
+            temp=q.pop(0) //first item of q asign the temp which also refer the node of grapgh
+            if temp[-1]==length:
+                result.append(temp)
+            else:
+                for element in graph[temp[-1]]://in graph temp[-1] return last item offthe temp and whcih also knoen as root node and whose are connected same node 
+                    q.append(temp+[element])
+        return result
+                
+        
