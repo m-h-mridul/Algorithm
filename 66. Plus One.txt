@@ -1,0 +1,11 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        sum1=""
+        for i in digits:
+            sum1+=str(i)
+        c=int(sum1)+1
+        l=[]
+        l[:0]=str(c)
+        return l
+
+        

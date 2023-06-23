@@ -1,0 +1,23 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        max_len = max(len(a), len(b))
+        a = a.zfill(max_len)
+        b = b.zfill(max_len)
+        result=''
+        carry=0
+        for i in range(max_len-1,-1,-1):
+            if int(a[i])+int(b[i])+carry==0:
+                result='0'+result
+                carry=0
+            elif int(a[i])+int(b[i])+carry<2:
+                result='1'+result
+                carry=0
+            elif int(a[i])+int(b[i])+carry==2:
+                carry=1
+                result='0'+result
+            else:
+                carry=1
+                result='1'+result
+        return '1'+result if carry==1 else ''+result
+       
+        

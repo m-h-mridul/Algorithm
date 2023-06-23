@@ -1,0 +1,15 @@
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        ans=[]
+        self.ansreturn('',0,0,ans,n)
+        return ans
+    def ansreturn(self,current,Open,close,ans,n):
+        if len(current)==n*2:
+            ans.append(current)
+            return
+        if Open<n:
+            self.ansreturn(current+'(',Open+1,close,ans,n)
+        if close<Open:
+            self.ansreturn(current+')',Open,close+1,ans,n)
+        
+        

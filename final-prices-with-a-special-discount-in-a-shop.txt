@@ -1,0 +1,17 @@
+class Solution:
+    def finalPrices(self, prices: List[int]) -> List[int]:
+        ans=[]
+        stack=[0]
+        for i in prices[::-1]://return last item of the list 
+            while i<stack[-1]://if condition will true that is pop
+                stack.pop()//otherwise the loop cannot run
+//here the while loop cheak that here any prices that is less then the current //value
+            ans+=[i-stack[-1]]
+            stack.append(i)
+        return ans[::-1]//return the last item of this list becouse of the ans is 
+//recevice lenear value
+
+
+ 
+            
+        

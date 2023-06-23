@@ -1,0 +1,17 @@
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        counter = {} #declear a map 
+        #for this solution we use double list ar double aray
+        for edge in edges:
+            #assign value by node name  
+            #if already have value then assign value increase by 1
+            # for first time it assign 0 in node name
+            counter[edge[0]] = counter.get(edge[0], 0) + 1
+            counter[edge[1]] = counter.get(edge[1], 0) + 1
+            
+            
+        for key, value in counter.items():
+            #cheak which node have max path for go 
+            if value == len(edges):
+                return key
+        
